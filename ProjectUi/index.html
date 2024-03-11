@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyEW8eLU1w6Iqad4bKddvWbWxKJPn9Gnt" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-XMPZCq/VTU2SS65qzRYTwsLg3/EkdYyHONTR9U8H9/vTWDT5EPl84zjK63fdAuUp"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyEW8eLU1w6Iqad4bKddvWbWxKJPn9Gnt"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-content border">
+                <div id="menu" class="border-bottom">
+                    <img src="./logo-new3.jpg" alt="" style="width: 150px;">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </div>
+                <div>
+                    <ul class="row d-flex flex-column gap-4 ">
+                        <li class="list-group-item" data-item="1">
+                            <i class="fa-solid fa-house" data-bs-toggle="tooltip" data-bs-html="true" title="Home"
+                                data-bs-placement="bottom">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0px; left: 2px;"
+                                    class="d-md-none">Home</span>
+                            </i>
+                            Home
+                        </li>
+                        <li class="list-group-item" data-item="2">
+                            <i class="fa-solid fa-user " data-bs-toggle="tooltip" data-bs-html="true" title="Profile"
+                                data-bs-placement="top">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0px; left: 2px;"
+                                    class="d-md-none">profile</span>
+                            </i>
+                            Profile
+                        </li>
+                        <li class="list-group-item" data-item="3">
+                            <i class="fa-solid fa-clipboard-list" style="font-size: 25px;" data-bs-toggle="tooltip"
+                                data-bs-html="true" title="Result" data-bs-placement="top">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0; left: 2px;"
+                                    class="d-md-none">Result</span>
+                            </i>
+                            Result
+                        </li>
+                        <li class="list-group-item" data-item="4">
+                            <i class="fa-solid fa-road" data-bs-toggle="tooltip" data-bs-html="true" title="Placement"
+                                data-bs-placement="top">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0px; left: 3px;"
+                                    class="d-md-none">Place<br>ment</span>
+                            </i>
+                            Placement
+                        </li>
+                        <li class="list-group-item" data-item="5"><i class="fa-solid fa-calendar"
+                                style="font-size: 22px;" data-bs-toggle="tooltip" data-bs-html="true" title="Time Table"
+                                data-bs-placement="top">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0px; left: 3px;"
+                                    class="d-md-none">Time<br>Table</span>
+                            </i>
+                            Time
+                            Table</li>
+                        <li class="list-group-item" data-item="6" id="updateList"><i class="fa-solid fa-key "
+                                data-bs-toggle="tooltip" data-bs-html="true" title="Update Password"
+                                data-bs-placement="top">
+                                <span style="font-size: 0.6rem;position: absolute;bottom: 0px; left: 1px;"
+                                    class="d-md-none">Update<br><span style="font-size: 0.5rem;">Password</span></span>
+                            </i>Update Password</li>
+                        <li class="list-group-item" data-item="7"><i class="fa-solid fa-message "
+                                data-bs-toggle="tooltip" data-bs-html="true" title="Chat" data-bs-placement="right">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0px; left: 3px;"
+                                    class="d-md-none">Chat</span>
+                            </i>Chat</li>
+                        <li class="list-group-item" data-item="8" id="logoutbtn">
+                            <i class="fa-solid fa-right-from-bracket" data-bs-toggle="tooltip" data-bs-html="true"
+                                title="Logout" data-bs-placement="top">
+                                <span style="font-size: 0.7rem;position: absolute;bottom: 0px; left: 1px;"
+                                    class="d-md-none">Logout</span>
+                            </i>Logout
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row border m-1 p-2">
+                <h1 class="name text-center" style="font-size: 2rem;">KSR College of Engineering</h1>
+            </div>
+
+            <!--Home Section-->
+            <section class="mt-3 home d-none" data-filter="1">
+
+            </section>
+
+            <!--Profile Section-->
+            <section class="mt-3 profile d-none" data-filter="2">
+                <div class="row ms-md-4 m-3 me-md-4 p-1 mb-3" style="border: 1px solid #FF9400;border-radius: 20px; ">
+                    <div class="col-md-2  p-2 d-flex flex-column align-items-center gap-4" id="bLeft">
+                        <div class="circle">
+                            <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt="" data-bs-toggle="tooltip"
+                                data-bs-html="true" title="Profile" data-bs-placement="top">
+                        </div>
+                        <div class="name">Edit <i class="fa-solid fa-pen-to-square" id="editProfile"></i></div>
+                    </div>
+                    <div class="col-md-10  pt-3 pb-2 ps-5 d-flex justify-content-between align-items-center flex-wrap">
+                        <div>
+                            <div class="name">Name: <span>Barathraj M</span></div>
+                            <div class="dept">Dept: <span>Computer Science And Engineering</span></div>
+                            <div class="section">Section: <span>A</span></div>
+                        </div>
+                        <div>
+                            <div class="sem">Semster: <span>5</span></div>
+                            <div class="cgpa">CGPA: <span>8.66</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border ms-md-4 me-md-5 m-3 ">
+                    <div class="col-md-4 border d-flex flex-column">
+                        <img src="./svg/attendance.svg" alt="" style="height: 150px;">
+                        <div class="name text-center"><span>Attendance Percentage: </span>99%</div>
+                        <div class="name text-center"><span>Today: </span>Present</div>
+                    </div>
+                    <div class="col-md-4 border d-flex flex-column">
+                        <img src="./svg/achivement.svg" alt="" style="height: 150px;">
+                        <div class="name text-center">Not Update</div>
+                    </div>
+                    <div class="col-md-4 border d-flex flex-column">
+                        <img src="./svg/cgpa.svg" alt="" style="height: 150px;">
+                        <div class="name text-center"><span>SGPA: </span>8.33</div>
+                        <div class="name text-center"><span>CGPA: </span>8.66</div>
+                    </div>
+                </div>
+                <div class="row ms-5 me-5 d-flex justify-content-center mt-3">
+                    <div class="col-xl-6 alert alert-info alert-dismissible fade show" id="editInfo"><i
+                            class="fa-solid fa-hand-point-right"></i>Click Edit Icon Then Only You can Edit <button
+                            type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+                </div>
+
+                <form action="">
+                    <div class="details border ms-md-5 me-md-5 p-2 m-3">
+                        <div class="name d-flex align-items-center gap-2 border-bottom p-2"><i
+                                class="fa-solid fa-circle-info"></i>Personal Details:</div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-md-4 mt-2">
+                                <div class="name">User Name:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Register No:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                        </div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Email:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Mobile No:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                        </div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-md-4 mt-2">
+                                <div class="name">DOB:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Gender:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                        </div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Father's Name:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Mother's Name:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                        </div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Hostel / Dayscollar:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                            <div class="col-md-4 mt-2">
+                                <div class="name">Age:</div>
+                                <input type="text" class="form-control border-bottom border-0">
+                            </div>
+                        </div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-md-8">
+                                <div class="name">Address</div>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control mt-1"
+                                    style="resize: none;"></textarea>
+
+                            </div>
+
+                        </div>
+                        <div class="row p-1 mt-2 d-flex justify-content-center">
+                            <div class="col-sm-8 justify-content-center d-flex">
+                                <button class="btn ps-5 pe-5 btn-outline-success" id="updateProfileBtn">Update</button>
+
+                            </div>
+                        </div>
+                        <div class="details-model"></div>
+                    </div>
+                </form>
+            </section>
+
+            <!--Result Section-->
+            <section class="result mt-3 d-none" data-filter="3">
+                <div class="row mt-5 ms-4 me-4 p-1 d-flex justify-content-center">
+                    <img src="./logo-new3.png" alt="" id="clgLogo" class="col-3 p-2 ">
+                </div>
+                <div class="col text-center p-1 name">
+                    <span>(Autonomous) <br>K.S.R Kalvi Nagar,Tiruchengode - 637 215,Namakkal Dt.Tamilnadu</span>
+                </div>
+                <div class="col   text-center  p-1 name">
+                    End Semester Examination Results Published
+                </div>
+
+                <div class="row m-4 p-2 d-flex justify-content-center  flex-column align-items-center">
+                    <div class="col-md-5 m-2">
+                        <div class="name"><i class="fa-solid fa-user"></i> Register No:</div>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-5 m-2">
+                        <button class="btn btn-success form-control rounded-pill">Submit</button>
+                    </div>
+                </div>
+            </section>
+
+            <!--Placement -->
+
+            <section class="placement mt-3 d-none" data-filter="4">
+                <div class="row m-md-5 border ms-3 me-3 rounded-5">
+                    <div class="col-md-3 d-flex align-items-center justify-content-center flex-column ">
+                        <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt="" style="height: 50px;border-radius: 50%;width: 50px; object-fit: cover;
+                        object-position: top;" data-bs-toggle="tooltip" data-bs-html="true" title="Profile"
+                            data-bs-placement="top">
+                        <div class="name">
+                            Barathraj M
+                            <br>
+                        </div>
+                    </div>
+                    <div
+                        class="col-md-6 p-4 d-flex  align-items-center align-items-md-start border justify-content-evenly">
+                        <div>
+                            <div class="name"><span>Placement ID: </span>73152113015</div>
+                            <div class="name"><span>Year: </span>3</div>
+                            <div class="name"><span>Section: </span>A</div>
+                        </div>
+                        <div>
+                            <div class="name"><span>CGPA: </span>8.66</div>
+                            <div class="name"><span>SGPA: </span>9.00</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 p-2 d-flex flex-column justify-content-center align-items-center mb-2">
+                        <div class="name text-center d-flex justify-content-center align-items-center gap-2"><i
+                                class="fa-solid fa-upload"></i>Upload Resume:</div>
+                        <input type="file" name="" id="" class="form-control rounded-pill">
+                    </div>
+                </div>
+                <div class="container border mt-2 mb-4">
+                    <div class="name mt-2">Placement Details:</div>
+                    <hr>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="col-md-4 mt-2">
+                            <div class="name">Name:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <div class="name">Register No:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="col-md-4 mt-2">
+                            <div class="name">SGPA:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <div class="name">CGPA:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="col-md-4 mt-2">
+                            <div class="name">12th %:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <div class="name">10th %:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="col-md-4 mt-2">
+                            <div class="name">Country:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <div class="name">State:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="col-md-4 mt-2">
+                            <div class="name">District:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <div class="name">City:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="col-md-4 mt-2">
+                            <div class="name">Urban / Rural:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                        <div class="col-md-4 mt-2 mb-2">
+                            <div class="name">Pincode:</div>
+                            <input type="text" class="form-control border-bottom border-0">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center ">
+                        <div class="col-md-3  d-flex align-items-center">
+                            <div class="name">Upload Image With(Suits):</div>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center">
+                            <input type="file" name="" id="" class="form-control rounded-pill">
+                        </div>
+                    </div>
+                    <div class="row p-1 mt-2 d-flex justify-content-center">
+                        <div class="btn btn-primary col-md-5 mb-3 rounded-pill">Update</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="name d-flex align-items-center gap-2"><i class="fa-solid fa-brain"></i>Update Your
+                        Skills:</div>
+                    <div class="row p-2 m-3 border">
+                        <div class="col p-5 d-flex justify-content-center flex-wrap">
+                            <div
+                                class="skill border ps-3 pe-3 d-flex justify-content-between gap-3 m-1 border-primary align-items-center p-1">
+                                <div class="name"><span>HTML</span></div>
+                                <div class="dSkill" style="cursor: pointer;"><i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="skill border ps-3 pe-3 d-flex justify-content-between gap-3 m-1 border-primary align-items-center p-1">
+                                <div class="name"><span>CSS</span></div>
+                                <div class="dSkill" style="cursor: pointer;"><i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="skill border ps-3 pe-3 d-flex justify-content-between gap-3 m-1 border-primary align-items-center p-1">
+                                <div class="name"><span>JS</span></div>
+                                <div class="dSkill" style="cursor: pointer;"><i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="skill border ps-3 pe-3 d-flex justify-content-between gap-3 m-1 border-primary align-items-center p-1">
+                                <div class="name"><span>JS</span></div>
+                                <div class="dSkill" style="cursor: pointer;"><i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="skill border ps-3 pe-3 d-flex justify-content-between gap-3 m-1 border-primary align-items-center p-1">
+                                <div class="name"><span>JS</span></div>
+                                <div class="dSkill" style="cursor: pointer;"><i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center p-2 ms-2">
+                            <div class="col-11">
+                                <input type="text" class="form-control" oninput="sendIcon()" id="skillInput">
+                            </div>
+                            <div class="col-1 d-flex align-items-center d-none sendIcon">
+                                <img src="./send.png" alt="" style="height: 25px; cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion container d-flex justify-content-center mb-3 " id="accordionExample">
+                    <div class="accordion-item col-md-7">
+                        <h2 class="accordion-header " id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                UpComing Companies
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">ZOHO</li>
+                                    <li class="list-group-item">Wipro</li>
+                                    <li class="list-group-item">TCS</li>
+                                    <li class="list-group-item">Infosys</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container ">
+                    <div class="row ms-3 me-3 d-flex align-items-center justify-content-center">
+                        <div class="col-md-4">
+                            <img src="./svg/company.svg" alt="" style="height:100%">
+                        </div>
+                        <div class="col-md-8 d-flex justify-content-center mt-2 mt-lg-0 ">
+                            <div class="name">Number Of Company Arrived</div>
+                        </div>
+                    </div>
+                    <div class="row ms-3 me-3 d-flex align-items-center flex-wrap-reverse ">
+                        <div class="col-md-8 d-flex justify-content-center">
+                            <div class="name">Number Of Interview Attended</div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="./svg/interview.svg" alt="" style="height:100%;">
+                        </div>
+                    </div>
+                    <div class="row ms-3 me-3 d-flex align-items-center ">
+                        <div class="col-md-4">
+                            <img src="./svg/job.svg" alt="" style="height:100%;">
+                        </div>
+                        <div class="col-md-8 d-flex justify-content-center">
+                            <div class="name">Number Of Internship</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+            <!--Chat Section-->
+            <section class="chat mt-3 p-1 d-none" data-filter="7">
+                <div class="row m-1 flex-wrap-reverse">
+                    <div class="col-md-4 mt-5 mt-md-2">
+                        <div class="name d-flex align-items-center gap-3 justify-content-center border p-3 mt-5 mt-md-0"><span>
+                                <i class="fa-solid fa-users"></i> </span>Users</div>
+                        <div class="alumini">
+                            <div class="name text-center border p-2 mt-2 mt-md-0">Alumini</div>
+                            <ul class="list-group d-flex mt-1">
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">ZOHO
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Wipro
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">TCS
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Infosys
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Wipro
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">TCS
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Infosys
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="userStu mt-2">
+                            <div class="name text-center border mt-3 p-2">Students</div>
+                            <ul class="list-group d-flex mt-1">
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">ZOHO
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Wipro
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">TCS
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Infosys
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">TCS
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Infosys
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">TCS
+                                </li>
+                                <li class="list-group-item list-group-item-action">
+                                    <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                        style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                        class="me-3">Infosys
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 border mt-1 chatSpace ">
+                        <div class="row">
+                            <div class="col-12 text-center p-2 d-flex justify-content-between border-bottom">
+                                <div class="name d-flex align-items-center gap-3 justify-content-center ms-5"><span><i
+                                            class="fa-brands fa-discord"></i></span>Chat Room</div>
+                                <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                    style="height: 45px;width: 45px; border-radius: 50%;object-fit: cover;object-position: top;"
+                                    class="me-3">
+                            </div>
+                            <div class="mesContent">
+                                <div class="incoming d-flex flex-column gap-1 mt-3">
+                                    <div class="cUserimg d-flex align-items-center gap-1">
+                                        <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                            style="height: 30px; width: 30px; border-radius: 50%;object-fit: cover;object-position: top;">
+                                        <sapn class="name" style="font-size: 1rem;">
+                                            Barathraj M
+                                        </sapn>
+                                        <sub style="font-size: 0.6rem;">22-02-24</sub></span>
+                                    </div>
+                                    <div class="inMsg ">
+                                        <span class="border ps-2 pe-5 rounded-end-2 rounded-bottom-2">hi</span>
+                                    </div>
+                                </div>
+                                <div class="outgoing d-flex align-items-end flex-column gap-1 mt-3">
+                                    <div class="cUserimg d-flex align-items-center gap-1">
+                                        <sub style="font-size: 0.6rem;">22-02-24</sub></span>
+                                        <sapn class="name" style="font-size: 1rem;">
+                                            Barathraj M
+                                        </sapn>
+                                        <img src="./albert-dera-ILip77SbmOE-unsplash.jpg" alt=""
+                                            style="height: 30px; width: 30px; border-radius: 50%;object-fit: cover;object-position: top;">
+                                    </div>
+                                    <div class="inMsg">
+                                        <span class="border ps-2 pe-5 rounded-start-2 rounded-bottom-2 ms-5">Lorem ipsum
+                                            dolor sit amet consectetur adipisicing elit. Harum repudiandae dolor tempore
+                                            doloremque ullam voluptatibus omnis, dignissimos voluptates doloribus
+                                            veniam, neque aliquam dolorum beatae! Libero pariatur odio iusto laboriosam
+                                            perferendis.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <i class="fa-sharp fa-solid fa-circle-down downIcon"></i>
+                        </div>
+                        <div class="row d-flex justify-content-center mesBox ">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-10">
+                                    <textarea name="" id="resizableTextarea"
+                                        oninput="adjustTextareaHeight(this),mesSendIcon(this)" class="form-control "
+                                        style="resize: none;height: 45px;" placeholder="Type Here..."></textarea>
+                                </div>
+                                <div class="col-1 d-flex align-items-center d-none" id="msgSendIcon">
+                                    <img src="./send.png" alt="" style="height: 25px; cursor: pointer;">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+            </section>
+            <!--Time Table Section-->
+
+            <section class="timetable mt-3 p-1 d-none" data-filter="5">
+                <div class="row border ms-4 me-4 d-flex justify-content-between">
+                    <div class="col-10 d-flex justify-content-center flex-column">
+                        <div class="name">Reg No: <span>73152113015</span></div>
+                        <div class="name">Section: <span>'A'</span></div>
+                        <div class="name">Year: <span>3</span></div>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <img src="./svg/table.svg" alt="" height="120">
+                    </div>
+                </div>
+                <div class="row m-1">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                                        <th>Day</th>
+                                        <th>I <br>
+                                            09:00 to 09:45
+                                        </th>
+                                        <th>II <br>
+                                            09:45 to 10:45</th>
+                                        <th rowspan="7">
+                                            <p style="margin-top: 115px;"> B <br> R <br> E <br> A <br> K</p>
+                                        </th>
+                                        <th>III <br>
+                                            11:00 to 11:45</th>
+                                        <th>IV <br> 11:45 to 12:30</th>
+                                        <th rowspan="7">
+                                            <p style="margin-top: 115px;"> L <br> U <br> N <br> C <br> H</p>
+                                        </th>
+                                        <th>V <br>
+                                            01:30 to 02:20</th>
+                                        <th>VI <br>
+                                            02:30 to 03:10</th>
+                                        <th>VII <br>
+                                            03:10 to 04:00</th>
+                                        </tr>
+                                        <tr>
+                                            <td>MON</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                
+                                        </tr>
+                                        <tr>
+                                            <td>TUE</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                
+                                        </tr>
+                                        <tr>
+                                            <td>WED</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                
+                                        </tr>
+                                        <tr>
+                                            <td>THU</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                
+                                        </tr>
+                                        <tr>
+                                            <td>FRI</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                
+                                        </tr>
+                                        <tr>
+                                            <td>SAT</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                
+                                        </tr>
+                                  
+                        </table>
+                    </div>
+                </div>
+                
+            </section>
+
+
+            <!--UpdatePassword Section-->
+            <section class="updatePassword mt-3 p-1 border d-flex justify-content-center align-items-center d-none"
+                data-filter="6" style="height: 90vh;">
+                <div class="container p-1 " id="updateContainer">
+                    <div class="row  m-4" style="border: 0.2px solid #FF9400;border-radius: 1rem;">
+                        <div class="col-md-6">
+                            <img src="./svg/updatePass.svg" alt="">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                            <div class="name mt-1 d-flex align-items-center gap-2" style="font-size: 1.4rem;"><i
+                                    class="fa-solid fa-wrench"></i> Update
+                                Password:
+                            </div>
+                            <div class="col-sm-10 m-1 mt-4">
+                                <div class="name">Old Password:</div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-sm-10 border m-1 mt-2"></div>
+                            <div class="col-sm-10 m-1">
+                                <div class="name">New Password:</div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-sm-10 m-1 mt-3">
+                                <div class="name">Confirm Password:</div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-sm-10 m-1 mt-4 mb-3">
+                                <button class="btn btn-outline-primary rounded-pill form-control">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!--Logout Section-->
+            <section class="logout  mt-5 p-1 d-flex justify-content-center d-none" style="height:85vh; "
+                data-filter="8">
+                <div class="logoutPopup ps-5 pe-5 rounded-4  alert " style=" border: 0.2px solid #0064c2;">
+                    <div id="logoutIcon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                    <div class="name text-center d-flex flex-column" style="font-size: 1.8rem; margin-top: 2rem;">
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 4rem;color: #FF9400;"></i>Are You
+                        Sure to
+                        Logout!
+                    </div>
+                    <div class="row d-flex justify-content-center gap-2 mt-4">
+                        <div class="col-4 btn btn-success">Yes</div>
+                        <div class="col-4 btn btn-danger">No</div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

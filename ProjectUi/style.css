@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 5px;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.sidebar {
+    width: 270px;
+    height: 98vh;
+}
+
+.sidebar .sidebar-content {
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 2px;
+  
+}
+
+::-webkit-scrollbar-track{
+    background-color:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0064c2;
+    border-radius: 10px;
+}
+
+
+.sidebar .sidebar-content #menu {
+    width: 100%;
+}
+
+.sidebar-content #menu i {
+    font-size: 25px;
+    position: absolute;
+    right: 5px;
+    color:#0064c2;
+    top: 25px;
+}
+
+.content {
+    flex: 1;
+    transition: 2s;
+}
+
+#menu {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+#menu img {
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.s1resize {
+    width: 45px;
+    align-items: flex-start;
+}
+
+.s1resize #menu img {
+    margin-top: 60px;
+}
+
+.sidebar .sidebar-content ul {
+    width: inherit;
+    list-style: none;
+    margin-top: 150px;
+    padding: 15px;
+}
+
+.sidebar .sidebar-content ul li {
+    width: 98%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+    height: 5rem;
+    white-space: nowrap;
+    transition: 0.5s;
+    font-size: 20px;
+    padding: 15px 15px 15px 6px;
+    color: #0064c2;
+    border-radius: 5px;
+}
+
+i {
+    font-size: 21px;
+}
+
+.sidebar .sidebar-content ul li:hover {
+    background-color:rgba(0,0,0,0.2);
+    color: #FF9400;
+}
+
+.content section {
+    width: 100%;
+    height: auto;
+
+}
+#bLeft{
+    border-right: 0.5px solid #FF9400;
+}
+
+.profile .circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile .circle img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.circle i {
+    position: absolute;
+    bottom: -25px;
+    cursor: pointer;
+    right: 20px;
+    color: #0064c2;
+    font-size: 22px;
+}
+
+.name,
+.dept,
+.section,
+.sem,
+.cgpa {
+    font-size: 1.2rem;
+    color: #0064c2;
+}
+
+.name span,
+.dept span,
+.section span,
+.sem span,
+.cgpa span {
+    color: #FF9400;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.active1 {
+    background-color: #0064c2;
+}
+
+.details {
+    position: relative;
+}
+
+.details-model {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+}
+
+.hide {
+    display: none;
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.logoutPopup {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    transition: 0.6s;
+    transform: translateY(-250%);
+    scale: 0;
+}
+
+#logoutIcon {
+    position: absolute;
+    left: 38.5%;
+    top: -50px;
+    padding: 30px;
+    border-radius: 50%;
+    background-color: #0064c2;
+}
+
+#logoutIcon i {
+    color: white;
+}
+
+.updatePassword {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#updateContainer{
+     scale: 0;
+     transition: 1s;
+     transform: translateY(-200%);
+}
+
+.slide {
+    transform: translateY(0);
+    scale: 1;
+}
+#updateContainer.updateslide{
+    scale: 1;
+    transform: translateY(0);
+}
+th{
+    font-size: 0.8rem;
+}
+@media (max-width:800px) {
+    .sidebar{
+        width: 49px;
+    }
+    .sidebar .sidebar-content {
+        border-radius: 0;
+    }
+    .sidebar .sidebar-content ul li:hover {
+       background-color: transparent;
+    }
+    #bLeft{
+       border: none;
+    }
+    .logoutPopup{
+      width:300px ;
+    }
+    #menuIcon{
+        display: none;
+    }
+
+}
+.chatSpace{
+    height: 80vh;
+    position: relative;
+}
+.chatSpace .mesBox{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+}
+.alumini ul{
+    height: 30vh;
+    overflow-y: scroll;
+    position: relative;
+}
+.userStu ul{
+    height: 30vh;
+    overflow-y: scroll;
+}
+.mesContent{
+    height: 75vh;
+    overflow-y:scroll ;
+    overflow-x: hidden;
+}
+.mesContent::-webkit-scrollbar{
+    width: 0;
+}
+.downIcon{
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    cursor: pointer;
+   display: none;
+    font-size: 1.5rem;
+}
+#msgSendIcon{
+    display: none;
+}
